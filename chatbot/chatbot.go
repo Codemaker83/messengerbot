@@ -36,3 +36,12 @@ type Message struct {
 		Text string `json:"text"`
 	} `json:"message"`
 }
+
+// Config contains all configuration for a chatbot
+type Config struct {
+	ServerIP    string `yaml:"server_ip,omitempty"`    // ServerIP is the IP address or url of the server running the chatbot (defaults to localhost)
+	Port        int    `yaml:"port,omitempty"`         // Port used to listen and serve
+	VerifyToken string `yaml:"verify,omitempty"`       // VerifyToken is the token used to verify the incoming request
+	AccessToken string `yaml:"access_token,omitempty"` // AccessToken is Messenger API's token
+	GraphQlURL  string `yaml:"graphql_url,omitempty"`  // GraphQlURL is Messenger API's base URL 
+}
